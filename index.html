@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="en" data-contrast="normal" data-fontsize="md">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Raksha Connect — One app. The right helpline. Instantly.</title>
+  <meta name="description" content="India's Smart Citizen Support System to find verified official emergency, police, medical, fire, cyber crime, women safety, and government complaint helplines instantly.">
+  <meta name="theme-color" content="#0b192c">
+
+  <!-- Core Stylesheet -->
+  <link rel="stylesheet" href="static/css/styles.css">
+  
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23dc2626'><path d='M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z'/></svg>">
+</head>
+<body>
+
+  <!-- Independent Platform Disclaimer Banner -->
+  <aside class="independent-disclaimer-banner" role="alert">
+    <span>🛡️</span>
+    <span data-i18n="disclaimer_banner">
+      <strong>Raksha Connect</strong> is an independent citizen-support initiative. NOT an official government application.
+    </span>
+  </aside>
+
+  <!-- Global Header -->
+  <header class="site-header">
+    <div class="header-container">
+      <a href="#home" class="brand-wrapper" aria-label="Raksha Connect Homepage">
+        <div class="brand-logo-icon">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+            <path d="m9 12 2 2 4-4"></path>
+          </svg>
+        </div>
+        <div class="brand-text">
+          <h1>RAKSHA <span class="brand-red">CONNECT</span></h1>
+          <p data-i18n="brand_tagline">One app. The right helpline. Instantly.</p>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation -->
+      <nav class="main-nav" id="mainNav" aria-label="Main Navigation">
+        <a href="#home" class="nav-link active" data-i18n="nav_home">Home</a>
+        <a href="#emergency" class="nav-link emergency-nav-btn" data-i18n="nav_emergency">🚨 Emergency</a>
+        <a href="#categories" class="nav-link" data-i18n="nav_directory">Categories</a>
+        <a href="#assistant" class="nav-link" data-i18n="nav_assistant">Smart Assistant</a>
+        <a href="#directory" class="nav-link" data-i18n="nav_directory">Helpline Directory</a>
+        <a href="#how-it-works" class="nav-link" data-i18n="nav_how">How It Works</a>
+        <a href="#about" class="nav-link" data-i18n="nav_about">About Us</a>
+        <a href="#contact" class="nav-link" data-i18n="nav_contact">Contact</a>
+      </nav>
+
+      <!-- Accessibility & Language Tools -->
+      <div class="header-actions">
+        <!-- Language Switcher -->
+        <div class="lang-select-wrapper" title="Select Display Language">
+          <select id="languageSelect" aria-label="Select Language">
+            <option value="en">English (EN)</option>
+            <option value="hi">हिंदी (HI)</option>
+            <option value="mr">मराठी (MR)</option>
+          </select>
+        </div>
+
+        <!-- High Contrast Mode Toggle -->
+        <button id="highContrastToggle" class="access-btn" title="Toggle High Contrast Mode" aria-label="High Contrast">
+          👁️
+        </button>
+
+        <!-- Font Size Scalers -->
+        <div style="display: flex; gap: 4px;">
+          <button id="fontDecBtn" class="access-btn" title="Decrease Font Size" aria-label="Decrease Font Size">A-</button>
+          <button id="fontIncBtn" class="access-btn" title="Increase Font Size" aria-label="Increase Font Size">A+</button>
+        </div>
+
+        <!-- Mobile Menu Toggle Button -->
+        <button class="mobile-nav-toggle" id="mobileNavToggle" aria-label="Toggle navigation menu">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============================================================
+       HERO SECTION
+       ============================================================ -->
+  <section class="hero-section" id="home">
+    <div class="hero-container">
+      <div class="hero-badge">
+        <span class="pulse-dot"></span>
+        <span data-i18n="hero_badge">Verified National Citizen Helplines</span>
+      </div>
+
+      <h2 class="hero-title">
+        <span data-i18n="hero_title_1">Need Help? Find the</span>
+        <span class="highlight-red" data-i18n="hero_title_2">Right Helpline</span>
+        <span data-i18n="hero_title_3">Instantly.</span>
+      </h2>
+
+      <p class="hero-subtitle" data-i18n="hero_subtitle">
+        Access verified national and state emergency contacts, citizen grievance portals, and public safety helplines without confusion.
+      </p>
+
+      <!-- Prominent Smart Search Box -->
+      <div class="hero-search-wrapper">
+        <div class="search-icon-decor">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+        </div>
+        <input 
+          type="text" 
+          id="heroSearchInput" 
+          class="hero-search-input" 
+          placeholder="Describe your problem or search for a helpline..." 
+          data-i18n="search_placeholder"
+          aria-label="Search helplines or describe your problem"
+        >
+        <button id="heroSearchBtn" class="search-submit-btn">
+          <span data-i18n="search_btn">Find Help</span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Quick Search Suggestions -->
+      <div class="quick-queries">
+        <span class="quick-queries-label" data-i18n="quick_queries_label">Popular searches:</span>
+        <button class="query-chip" data-query="Cyber Fraud 1930">💳 Cyber Fraud (1930)</button>
+        <button class="query-chip" data-query="Medical Ambulance 108">🚑 Ambulance (108)</button>
+        <button class="query-chip" data-query="Women Safety 181">👩 Women Safety (181)</button>
+        <button class="query-chip" data-query="Fire 101">🔥 Fire Emergency (101)</button>
+        <button class="query-chip" data-query="Childline 1098">👶 Childline (1098)</button>
+        <button class="query-chip" data-query="Highway Accident 1033">🛣️ Highway NHAI (1033)</button>
+        <button class="query-chip" data-query="Railway 139">🚆 RailMadad (139)</button>
+      </div>
+
+      <!-- Hero Action Buttons -->
+      <div class="hero-action-buttons">
+        <a href="#assistant" class="btn-primary">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 2a10 10 0 1 0 10 10H12V2z"></path>
+            <path d="M12 12L2.1 12"></path>
+          </svg>
+          <span data-i18n="btn_find_help">Smart Help Assistant</span>
+        </a>
+        <a href="#emergency" class="btn-emergency">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+          </svg>
+          <span data-i18n="btn_emergency_dials">Emergency Speed Dials</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       EMERGENCY QUICK ACCESS SECTION
+       ============================================================ -->
+  <section class="emergency-strip" id="emergency">
+    <div class="emergency-strip-container">
+      <div class="emergency-strip-header">
+        <div class="emergency-strip-title">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <circle cx="12" cy="12" r="10"></circle>
+            <line x1="12" y1="8" x2="12" y2="12"></line>
+            <line x1="12" y1="16" x2="12.01" y2="16"></line>
+          </svg>
+          <span data-i18n="emergency_strip_title">Nationwide Emergency Speed Dials (24x7)</span>
+        </div>
+        <span class="emergency-strip-badge">Free • 24x7 • Toll Free</span>
+      </div>
+
+      <div class="emergency-dial-grid">
+        <!-- 112 Unified -->
+        <div class="quick-dial-card" onclick="window.triggerCallModal('Emergency Response Support System (ERSS)', '112', 'Unified Police, Ambulance & Fire', 'Ministry of Home Affairs')">
+          <div class="qd-left">
+            <span class="qd-name">Unified Emergency</span>
+            <span class="qd-number">112</span>
+          </div>
+          <button class="qd-call-btn" title="Call 112">📞</button>
+        </div>
+
+        <!-- 108 Ambulance -->
+        <div class="quick-dial-card" onclick="window.triggerCallModal('National Ambulance & Trauma Service', '108', 'Medical Emergency', 'National Health Mission')">
+          <div class="qd-left">
+            <span class="qd-name">Ambulance / Medical</span>
+            <span class="qd-number">108</span>
+          </div>
+          <button class="qd-call-btn" title="Call 108">📞</button>
+        </div>
+
+        <!-- 101 Fire -->
+        <div class="quick-dial-card" onclick="window.triggerCallModal('National Fire and Rescue Service', '101', 'Fire Emergency', 'Directorate General Fire Services')">
+          <div class="qd-left">
+            <span class="qd-name">Fire & Rescue</span>
+            <span class="qd-number">101</span>
+          </div>
+          <button class="qd-call-btn" title="Call 101">📞</button>
+        </div>
+
+        <!-- 181 Women -->
+        <div class="quick-dial-card" onclick="window.triggerCallModal('National Women Helpline (One Stop Centre)', '181', 'Women Safety', 'Ministry of Women and Child Development')">
+          <div class="qd-left">
+            <span class="qd-name">Women Safety</span>
+            <span class="qd-number">181</span>
+          </div>
+          <button class="qd-call-btn" title="Call 181">📞</button>
+        </div>
+
+        <!-- 1098 Childline -->
+        <div class="quick-dial-card" onclick="window.triggerCallModal('CHILDLINE India Emergency Rescue', '1098', 'Child Protection', 'Ministry of Women and Child Development')">
+          <div class="qd-left">
+            <span class="qd-name">Child Protection</span>
+            <span class="qd-number">1098</span>
+          </div>
+          <button class="qd-call-btn" title="Call 1098">📞</button>
+        </div>
+
+        <!-- 1930 Cyber Fraud -->
+        <div class="quick-dial-card" onclick="window.triggerCallModal('National Cyber Financial Fraud Helpline', '1930', 'Cyber Crime', 'Indian Cyber Crime Coordination Centre (I4C)')">
+          <div class="qd-left">
+            <span class="qd-name">Cyber Crime Fraud</span>
+            <span class="qd-number">1930</span>
+          </div>
+          <button class="qd-call-btn" title="Call 1930">📞</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       HELPLINE CATEGORIES SECTION (12 Cards)
+       ============================================================ -->
+  <section class="section-wrapper" id="categories">
+    <div class="section-head">
+      <span class="section-tag" data-i18n="cat_section_tag">Comprehensive Directory</span>
+      <h2 class="section-title" data-i18n="cat_section_title">Explore Helplines by Category</h2>
+      <p class="section-desc" data-i18n="cat_section_desc">
+        Browse 12 essential emergency and grievance categories verified through official government departments.
+      </p>
+    </div>
+
+    <!-- Rendered by JavaScript dynamically -->
+    <div class="categories-grid" id="categoriesGrid"></div>
+  </section>
+
+  <!-- ============================================================
+       SMART HELP ASSISTANT (AI Interactive Section)
+       ============================================================ -->
+  <section class="section-wrapper" id="assistant">
+    <div class="ai-assistant-card">
+      <div class="ai-assistant-header">
+        <div class="ai-title-group">
+          <div class="ai-avatar">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+              <path d="M12 2a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2 2 2 0 0 1-2-2V4a2 2 0 0 1 2-2z"></path>
+              <rect x="4" y="8" width="16" height="12" rx="4"></rect>
+              <line x1="9" y1="13" x2="9.01" y2="13"></line>
+              <line x1="15" y1="13" x2="15.01" y2="13"></line>
+            </svg>
+          </div>
+          <div>
+            <h3 data-i18n="ai_title">Smart Help Assistant</h3>
+            <p data-i18n="ai_subtitle">Describe your issue in ordinary words. Our AI recommends verified official helplines instantly.</p>
+          </div>
+        </div>
+        <div class="ai-safety-badge">
+          <span>✓</span>
+          <span>Zero Fabricated Numbers • Verified Only</span>
+        </div>
+      </div>
+
+      <!-- Interactive Sample Prompts -->
+      <div class="ai-sample-prompts">
+        <span style="font-size: 0.8rem; color: #94a3b8; font-weight: 600;">Try quick scenarios:</span>
+        <button class="sample-prompt-btn" data-prompt="Someone debited money from my account after asking for an OTP on WhatsApp">
+          💳 "Money stolen via OTP"
+        </button>
+        <button class="sample-prompt-btn" data-prompt="A vehicle collided and is smoking on the express highway with passengers trapped">
+          🚗 "Accident on expressway"
+        </button>
+        <button class="sample-prompt-btn" data-prompt="A woman is facing physical violence and threats from relatives at home">
+          👩 "Domestic violence crisis"
+        </button>
+        <button class="sample-prompt-btn" data-prompt="Mere pados ke ghar me aag lagi hai aur dhuan nikal raha hai">
+          🔥 "Hindi: पड़ोस में आग लगी है"
+        </button>
+        <button class="sample-prompt-btn" data-prompt="Bag and purse stolen on the running train near Nagpur station">
+          🚆 "Theft in running train"
+        </button>
+      </div>
+
+      <!-- Input Area -->
+      <div class="ai-input-area">
+        <textarea 
+          id="aiProblemInput" 
+          class="ai-textarea" 
+          placeholder="Explain what happened (e.g., 'Someone called claiming to be my bank and took money via OTP' or 'Elderly neighbor needs medical rescue')..." 
+          data-i18n="ai_placeholder"
+          rows="3"
+        ></textarea>
+
+        <div class="ai-actions-row">
+          <p class="ai-disclaimer-text" data-i18n="ai_disclaimer">
+            Raksha Connect never invents phone numbers. All suggestions are retrieved directly from official government databases.
+          </p>
+          <button id="aiSubmitBtn" class="btn-ai-submit">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+              <circle cx="12" cy="12" r="10"></circle>
+              <path d="m10 15 5-3-5-3v6z"></path>
+            </svg>
+            <span data-i18n="ai_btn">Analyze & Get Helplines</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- AI Recommendation Output Box -->
+      <div id="aiResultBox" class="ai-result-box"></div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       HELPLINE DIRECTORY SECTION
+       ============================================================ -->
+  <section class="section-wrapper" id="directory">
+    <div class="section-head">
+      <span class="section-tag" data-i18n="dir_section_tag">Searchable Database</span>
+      <h2 class="section-title" data-i18n="dir_section_title">Official Helpline Directory</h2>
+      <p class="section-desc" data-i18n="dir_section_desc">
+        Search, filter, and inspect verified contacts with official source references and last-verified timestamps.
+      </p>
+    </div>
+
+    <!-- Search & Filter Controls Bar -->
+    <div class="directory-controls">
+      <div class="filter-pills-row" id="directoryFilterPills">
+        <!-- Rendered by JS -->
+      </div>
+
+      <div class="directory-tools">
+        <input 
+          type="text" 
+          id="directorySearchInput" 
+          class="dir-search-input" 
+          placeholder="Filter by name, number, keywords..."
+          aria-label="Filter helplines"
+        >
+        <select id="directorySortSelect" class="sort-select" aria-label="Sort helplines">
+          <option value="alphabetical" data-i18n="dir_sort_alpha">Alphabetical (A-Z)</option>
+          <option value="emergency_first" data-i18n="dir_sort_emerg">Emergency First</option>
+          <option value="verified_date" data-i18n="dir_sort_recent">Recently Verified</option>
+        </select>
+        <span id="directoryCountBadge" class="dir-cat-badge" style="background:#0f172a; color:white;">
+          Loading...
+        </span>
+      </div>
+    </div>
+
+    <!-- Directory Helplines Grid -->
+    <div class="directory-grid" id="directoryGrid">
+      <!-- Rendered dynamically by app.js -->
+    </div>
+  </section>
+
+  <!-- ============================================================
+       HOW IT WORKS SECTION
+       ============================================================ -->
+  <section class="section-wrapper" id="how-it-works" style="background-color: white; border-radius: 24px; margin-bottom: 60px;">
+    <div class="section-head">
+      <span class="section-tag" data-i18n="how_tag">Simple 3-Step Process</span>
+      <h2 class="section-title" data-i18n="how_title">How Raksha Connect Works</h2>
+      <p class="section-desc">
+        Designed for extreme clarity so citizens of any age can find help without delay.
+      </p>
+    </div>
+
+    <div class="steps-grid">
+      <div class="step-card">
+        <div class="step-number-bubble">1</div>
+        <h3 data-i18n="step1_title">1. Search or Describe</h3>
+        <p data-i18n="step1_desc">
+          Type a keyword, number, or describe your situation in plain English, Hindi, or Marathi into our search bar or Smart Assistant.
+        </p>
+      </div>
+
+      <div class="step-card">
+        <div class="step-number-bubble">2</div>
+        <h3 data-i18n="step2_title">2. Instant Verification Match</h3>
+        <p data-i18n="step2_desc">
+          Our engine maps your query to authorized official helplines, highlighting operational hours and toll-free access.
+        </p>
+      </div>
+
+      <div class="step-card">
+        <div class="step-number-bubble">3</div>
+        <h3 data-i18n="step3_title">3. Confirm & Call Safely</h3>
+        <p data-i18n="step3_desc">
+          Review caller tips and emergency guidelines, then place a direct call with zero misdial risk.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       WHY CHOOSE RAKSHA CONNECT
+       ============================================================ -->
+  <section class="section-wrapper">
+    <div class="section-head">
+      <span class="section-tag">Public Interest Engineering</span>
+      <h2 class="section-title" data-i18n="why_title">Why Rely on Raksha Connect?</h2>
+    </div>
+
+    <div class="features-grid">
+      <div class="feature-box">
+        <div class="feature-icon">🛡️</div>
+        <div class="feature-info">
+          <h4 data-i18n="feat1_title">100% Verified Records</h4>
+          <p data-i18n="feat1_desc">Numbers cross-referenced against official .gov.in portals and nodal ministries.</p>
+        </div>
+      </div>
+
+      <div class="feature-box">
+        <div class="feature-icon">🔓</div>
+        <div class="feature-info">
+          <h4 data-i18n="feat2_title">Zero Account Required</h4>
+          <p data-i18n="feat2_desc">Instant help during emergencies without login walls, passwords, or personal data tracking.</p>
+        </div>
+      </div>
+
+      <div class="feature-box">
+        <div class="feature-icon">🌐</div>
+        <div class="feature-info">
+          <h4 data-i18n="feat3_title">Smart Language Understanding</h4>
+          <p data-i18n="feat3_desc">Supports English, Hindi, and Marathi natural problem descriptions seamlessly.</p>
+        </div>
+      </div>
+
+      <div class="feature-box">
+        <div class="feature-icon">⚡</div>
+        <div class="feature-info">
+          <h4 data-i18n="feat4_title">Accidental Dial Protection</h4>
+          <p data-i18n="feat4_desc">Two-step confirmation modal ensures safety and displays essential incident checklist.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       ABOUT US & ARCHITECTURE
+       ============================================================ -->
+  <section class="section-wrapper" id="about">
+    <div class="contact-container" style="margin-bottom: 24px;">
+      <div class="contact-info-col">
+        <span class="section-tag">About Raksha Connect</span>
+        <h3 style="margin-top: 10px;">Bridging the Gap Between Citizens & Emergency Services</h3>
+        <p>
+          In a moment of distress, citizens often waste precious minutes searching through conflicting phone directories, outdated blogs, or fake search ads. 
+          <strong>Raksha Connect</strong> solves this crisis by maintaining a single, authoritative directory of verified Indian emergency response systems, women helplines, cyber crime cells, and government complaint mechanisms.
+        </p>
+        <p>
+          Built with accessibility at its core, Raksha Connect features high-contrast rendering, screen-reader optimizations, multilingual translation, and zero login barriers.
+        </p>
+
+        <div style="background: #f1f5f9; padding: 14px 18px; border-radius: 10px; margin-top: 18px;">
+          <strong style="color: #0f172a; font-size: 0.9rem;">Authoritative Source Registry:</strong>
+          <div style="font-size: 0.82rem; color: #475569; margin-top: 4px;">
+            Every record references its official nodal ministry: Ministry of Home Affairs (112.gov.in, cybercrime.gov.in), Ministry of Health (mohfw.gov.in), NHAI (nhai.gov.in), and MWCD (wcd.nic.in).
+          </div>
+        </div>
+      </div>
+
+      <div style="display:flex; flex-direction:column; justify-content:center; gap: 16px;">
+        <div style="background: white; border: 1px solid #e2e8f0; border-radius: 14px; padding: 22px;">
+          <h4 style="color: #0b192c; font-size: 1.1rem; font-weight: 800; margin-bottom: 6px;">
+            Strict Independence Statement
+          </h4>
+          <p style="font-size: 0.88rem; color: #64748b; line-height: 1.5;">
+            Raksha Connect is an independent civic-tech software prototype developed for public utility. It is not affiliated with, owned by, or officially endorsed by the Government of India or any state administration. All official logos and helpline numbers remain the respective property of their nodal ministries.
+          </p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+          <div style="background: #eff6ff; padding: 16px; border-radius: 12px; text-align: center;">
+            <div id="statVerifiedCount" style="font-size: 1.8rem; font-weight: 900; color: #1e3a8a;">25+</div>
+            <div style="font-size: 0.8rem; font-weight: 700; color: #3b82f6;">Verified Helplines</div>
+          </div>
+          <div style="background: #ecfdf5; padding: 16px; border-radius: 12px; text-align: center;">
+            <div id="statTotalCount" style="font-size: 1.8rem; font-weight: 900; color: #065f46;">12</div>
+            <div style="font-size: 0.8rem; font-weight: 700; color: #10b981;">Nodal Categories</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       CONTACT US & HELPLINE SUGGESTION FORM
+       ============================================================ -->
+  <section class="section-wrapper" id="contact">
+    <div class="contact-container">
+      <div class="contact-info-col">
+        <span class="section-tag">Get in Touch</span>
+        <h3 data-i18n="contact_title">Connect with the Project Team</h3>
+        <p data-i18n="contact_desc">
+          Report outdated numbers, suggest new verified community services, or submit general feedback to help improve the system.
+        </p>
+
+        <div class="contact-details-list">
+          <div class="contact-detail-item">
+            <div class="contact-detail-icon">📍</div>
+            <div class="contact-detail-text">
+              <h4>Project Location</h4>
+              <p>Independent Civic Tech Lab, India</p>
+            </div>
+          </div>
+          <div class="contact-detail-item">
+            <div class="contact-detail-icon">✉️</div>
+            <div class="contact-detail-text">
+              <h4>Email Support</h4>
+              <p>support@rakshaconnect.org (Civic Prototype)</p>
+            </div>
+          </div>
+          <div class="contact-detail-item">
+            <div class="contact-detail-icon">🔒</div>
+            <div class="contact-detail-text">
+              <h4>Privacy Commitment</h4>
+              <p>Zero tracking, zero sell of citizen search data.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <form id="contactForm" class="contact-form">
+        <div class="form-group">
+          <label for="contactName">Your Full Name *</label>
+          <input type="text" id="contactName" class="form-control" placeholder="e.g. Rahul Sharma" required>
+        </div>
+
+        <div class="form-group">
+          <label for="contactEmail">Email Address *</label>
+          <input type="email" id="contactEmail" class="form-control" placeholder="e.g. rahul@example.com" required>
+        </div>
+
+        <div class="form-group">
+          <label for="contactSubject">Inquiry Category *</label>
+          <select id="contactSubject" class="form-control">
+            <option value="General Feedback">General Feedback & Appreciation</option>
+            <option value="Report Outdated Number">Report Outdated / Incorrect Number</option>
+            <option value="Suggest New Helpline">Suggest New Verified Official Helpline</option>
+            <option value="Technical Bug">Technical Platform Issue</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="contactMessage">Message / Helpline Details *</label>
+          <textarea id="contactMessage" class="form-control" rows="4" placeholder="Include helpline name, number, authority website, and notes..." required></textarea>
+        </div>
+
+        <button type="submit" class="btn-primary" style="background: #0b192c; color: white; justify-content: center;">
+          Submit Message
+        </button>
+      </form>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       CALL CONFIRMATION SAFETY MODAL
+       ============================================================ -->
+  <div id="callModal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modalHelplineName">
+    <div class="modal-dialog">
+      <button class="modal-close-btn" onclick="window.closeCallModal()" aria-label="Close dialog">✕</button>
+      
+      <div class="modal-header-icon">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+          <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+        </svg>
+      </div>
+
+      <h3 class="modal-title" data-i18n="modal_confirm_title">Call Confirmation</h3>
+      <div id="modalCategoryName" style="text-align:center; font-size:0.8rem; font-weight:700; color:#2563eb; text-transform:uppercase; margin-bottom:4px;"></div>
+      <div id="modalHelplineName" class="modal-helpline-name"></div>
+
+      <div class="modal-number-display">
+        <div id="modalNumberDigits" class="modal-number-digits">112</div>
+        <div class="modal-number-sub">Official Government Emergency Helpline</div>
+      </div>
+
+      <div class="modal-tips-box">
+        <strong>📋 Caller Checklist:</strong>
+        <ul style="margin-left: 18px; margin-top: 4px; font-size: 0.82rem;">
+          <li>Stay calm and state your exact landmark / GPS location.</li>
+          <li>For cyber financial fraud (1930), have bank account & transaction ID ready.</li>
+          <li>For highway assistance (1033), note nearest toll plaza or milestone.</li>
+        </ul>
+      </div>
+
+      <div style="font-size: 0.78rem; color: #64748b; margin-bottom: 18px; text-align: center;">
+        Source: <span id="modalSourceRef" style="font-weight: 600;">Government Nodal Agency</span>
+      </div>
+
+      <div class="modal-actions">
+        <button class="btn-modal-cancel" onclick="window.closeCallModal()" data-i18n="modal_cancel">
+          Cancel
+        </button>
+        <button class="btn-primary" style="padding: 12px; font-size: 0.9rem;" onclick="window.copyModalNumber()" data-i18n="modal_copy">
+          📋 Copy
+        </button>
+        <a id="modalDialBtn" href="tel:112" class="btn-modal-dial" data-i18n="modal_proceed">
+          📞 Call Now
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Container -->
+  <div id="toastContainer" class="toast-container" aria-live="polite"></div>
+
+  <!-- ============================================================
+       GLOBAL FOOTER
+       ============================================================ -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <!-- Legal Independence Disclaimer -->
+      <div class="footer-disclaimer-box">
+        <strong data-i18n="footer_disclaimer">
+          IMPORTANT DISCLAIMER: Raksha Connect is an independent public-interest platform created to simplify citizen helpline discovery. It is NOT affiliated with or operated by any government body. In extreme life-threatening situations, dial 112 directly.
+        </strong>
+      </div>
+
+      <div class="footer-top">
+        <div class="footer-brand">
+          <h3>RAKSHA CONNECT</h3>
+          <p>
+            Smart Citizen Support System for finding verified emergency and government complaint helplines instantly across India.
+          </p>
+          <div style="display:flex; gap: 8px;">
+            <span class="dir-verified-badge verified" style="font-size:0.75rem;">Verified Database</span>
+            <span class="dir-verified-badge verified" style="font-size:0.75rem; background:#eff6ff; color:#1e40af; border-color:#bfdbfe;">Zero Data Tracking</span>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Helplines</h4>
+          <ul>
+            <li><a href="#emergency">National Emergency (112)</a></li>
+            <li><a href="#emergency">Medical Ambulance (108)</a></li>
+            <li><a href="#emergency">Fire Rescue (101)</a></li>
+            <li><a href="#emergency">Women Safety (181)</a></li>
+            <li><a href="#emergency">Cyber Crime (1930)</a></li>
+            <li><a href="#emergency">Childline (1098)</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#categories">12 Categories</a></li>
+            <li><a href="#assistant">AI Smart Assistant</a></li>
+            <li><a href="#directory">Directory Search</a></li>
+            <li><a href="#how-it-works">How It Works</a></li>
+            <li><a href="#about">About Initiative</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Key Portals</h4>
+          <ul>
+            <li><a href="https://112.gov.in" target="_blank" rel="noopener">ERSS 112 Portal ↗</a></li>
+            <li><a href="https://cybercrime.gov.in" target="_blank" rel="noopener">National Cyber Crime Portal ↗</a></li>
+            <li><a href="https://consumerhelpline.gov.in" target="_blank" rel="noopener">National Consumer Helpline ↗</a></li>
+            <li><a href="https://telemanas.mohfw.gov.in" target="_blank" rel="noopener">Tele-MANAS Mental Health ↗</a></li>
+            <li><a href="https://nhai.gov.in" target="_blank" rel="noopener">NHAI Highway Safety ↗</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          &copy; 2026 <strong>Raksha Connect</strong> — Built for Citizen Welfare & Public Safety.
+        </div>
+        <div style="display:flex; gap: 16px;">
+          <a href="#about" style="color:#94a3b8; text-decoration:none;">Privacy Notice</a>
+          <span>•</span>
+          <a href="#about" style="color:#94a3b8; text-decoration:none;">Terms of Service</a>
+          <span>•</span>
+          <a href="#contact" style="color:#94a3b8; text-decoration:none;">Report Correction</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="static/js/translations.js"></script>
+  <script src="static/js/data_store.js"></script>
+  <script src="static/js/ai_assistant.js"></script>
+  <script src="static/js/app.js"></script>
+</body>
+</html>
